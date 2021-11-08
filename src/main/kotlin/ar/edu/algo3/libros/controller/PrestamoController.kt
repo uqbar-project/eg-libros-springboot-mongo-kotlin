@@ -14,7 +14,7 @@ class PrestamoController {
     @Autowired
     lateinit var prestamoService: PrestamoService
 
-    @GetMapping(value = arrayOf("/prestamos"))
+    @GetMapping("/prestamos")
     @ApiOperation("Permite conocer los préstamos pendientes del sistema, es decir, aquellos libros que están en poder de alguna persona.")
     fun getPrestamos() =
         this.prestamoService.getPrestamosPendientes()
