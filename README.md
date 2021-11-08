@@ -1,6 +1,6 @@
 # Ejemplo Libros con Springboot y MongoDB
 
-[![Build Status](https://travis-ci.com/uqbar-project/eg-libros-springboot-mongo.svg?branch=master)](https://travis-ci.com/uqbar-project/eg-libros-springboot-mongo)
+[![build](https://github.com/uqbar-project/eg-libros-springboot-mongo-kotlin/actions/workflows/build.yml/badge.svg)](https://github.com/uqbar-project/eg-libros-springboot-mongo-kotlin/actions/workflows/build.yml) [![codecov](https://codecov.io/gh/uqbar-project/eg-futbol-springboot-mongo-kotlin/branch/master/graph/badge.svg?token=4hfMJSkesY)](https://codecov.io/gh/uqbar-project/eg-futbol-springboot-mongo-kotlin)
 
 ## Apunte completo
 

@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.annotation.Transient
 
 @Document(collection = "libros")
-class Libro() {
+class Libro {
     companion object {
         const val PRESTADO = "P"
         const val DISPONIBLE = "D"
@@ -36,8 +36,6 @@ class Libro() {
     }
 
     fun estaDisponible() = activo && estado == DISPONIBLE
-
-    fun estaPrestado() = activo && estado == PRESTADO
 
     override fun toString(): String = titulo
 }

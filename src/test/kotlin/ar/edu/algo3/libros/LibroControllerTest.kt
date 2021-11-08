@@ -50,7 +50,7 @@ class LibroControllerTest {
         libroRepository.save(Libro().apply {
             titulo = "Esperando la carroza"
             autor = "Jacobo Langsner"
-            estado = PRESTADO
+            prestar()
         })
     }
 
