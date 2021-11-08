@@ -33,7 +33,7 @@ class Prestamo {
 
     fun devolver() {
         fechaDevolucion = LocalDate.now()
-        libro.devolver()
+        libro!!.devolver()
     }
 
     fun estaDisponible() = !estaPendiente()
