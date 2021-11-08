@@ -1,0 +1,12 @@
+spring:
+  data:
+    mongodb:
+      database: local
+      host: localhost
+      port: 0
+      repositories:
+        enabled: true
+logging:
+  level:
+    org.springframework.data: DEBUG
+    org.mongodb.driver.protocol.command: DEBUG
