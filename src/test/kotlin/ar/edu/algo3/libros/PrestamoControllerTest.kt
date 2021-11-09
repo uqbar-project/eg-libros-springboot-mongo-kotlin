@@ -106,13 +106,25 @@ class PrestamoControllerTest {
     @Test
     fun `se puede devolver un libro una vez creado`() {
         val prestamo = prestamoRepository.save(crearUnPrestamo())
-
+        libroRepository.save(prestamo.libro)
         mockMvc.perform(
-            MockMvcRequestBuilders.post("/prestamos")
+            MockMvcRequestBuilders.patch("/prestamos")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(prestamo))
         )
             .andExpect(MockMvcResultMatchers.status().isOk)
+    }
+
+    @Test
+    fun `no se puede devolver un libro si el prestamo no existe`() {
+        val prestamo = crearUnPrestamo().apply { id = "CualquierID" }
+
+        mockMvc.perform(
+            MockMvcRequestBuilders.patch("/prestamos")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(prestamo))
+        )
+            .andExpect(MockMvcResultMatchers.status().isNotFound)
     }
 
 
@@ -124,6 +136,7 @@ class PrestamoControllerTest {
                 titulo = "La guerra y la paz"
             }
         )
+        libroPrestable.prestar()
         libro = libroPrestable
     }
 }
