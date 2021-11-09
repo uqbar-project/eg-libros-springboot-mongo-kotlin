@@ -14,7 +14,7 @@ class Prestamo {
     var fechaPrestamo = LocalDate.now()
     var fechaDevolucion: LocalDate? = null
 
-    fun estaPendiente() = fechaDevolucion === null
+    fun estaDisponible() = fechaDevolucion !== null
 
     fun validar() {
         if (!libro.estaDisponible()) {
@@ -33,12 +33,7 @@ class Prestamo {
 
     fun devolver() {
         fechaDevolucion = LocalDate.now()
-        libro!!.devolver()
+        libro.devolver()
     }
-
-    fun estaDisponible() = !estaPendiente()
-
-    override fun toString() =
-        "" + super.hashCode() + "- " + libro.toString() + " a " + persona.toString()
 
 }

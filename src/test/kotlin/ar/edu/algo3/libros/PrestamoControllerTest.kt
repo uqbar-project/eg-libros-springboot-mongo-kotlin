@@ -22,7 +22,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
-@DisplayName("Dado un controller de personas")
+@DisplayName("Dado un controller de préstamos")
 class PrestamoControllerTest {
 
     @Autowired
@@ -104,7 +104,7 @@ class PrestamoControllerTest {
     }
 
     @Test
-    fun `se puede devolver un libro una vez creado`() {
+    fun `se puede devolver un libro una vez creado el prestamo, la segunda vez tira error`() {
         val prestamo = prestamoRepository.save(crearUnPrestamo())
         libroRepository.save(prestamo.libro)
         mockMvc.perform(
@@ -113,6 +113,14 @@ class PrestamoControllerTest {
                 .content(objectMapper.writeValueAsString(prestamo))
         )
             .andExpect(MockMvcResultMatchers.status().isOk)
+
+        // la segunda vez el préstamo está finalizado
+        mockMvc.perform(
+            MockMvcRequestBuilders.patch("/prestamos")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(prestamo))
+        )
+            .andExpect(MockMvcResultMatchers.status().isBadRequest)
     }
 
     @Test

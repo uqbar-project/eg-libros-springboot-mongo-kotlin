@@ -9,7 +9,4 @@ class Persona {
     lateinit var id: String
     lateinit var nombre: String
     lateinit var password: String
-
-    override fun toString() = nombre
-
 }
