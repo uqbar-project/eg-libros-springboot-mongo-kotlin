@@ -30,8 +30,6 @@ dependencies {
     implementation("io.springfox:springfox-boot-starter:3.0.0")
     implementation("io.springfox:springfox-swagger-ui:3.0.0")
     implementation("org.springframework.boot:spring-boot-devtools:2.5.6")
-    runtimeOnly("com.h2database:h2:1.4.200")
-    runtimeOnly("mysql:mysql-connector-java:8.0.25")
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.6")
     testImplementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo")
 }
