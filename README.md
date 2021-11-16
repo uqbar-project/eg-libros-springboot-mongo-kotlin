@@ -5,3 +5,7 @@
 ## Apunte completo
 
 La explicación detallada está en [este apunte](https://docs.google.com/document/d/1kLAsruPYKZBNB0zi40_ORYavt_daQzEpaz2tf6pB6zw/edit#)
+
+## Cómo testear la aplicación en Insomnia
+
+Te dejamos [el archivo de Insomnia](./Libros_Insomnia.json) con ejemplos para probarlo.
