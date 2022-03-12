@@ -4,8 +4,11 @@ spring:
       database: test
       host: localhost
       port: 27017
-      repositories:
-        enabled: true
+
+  mongodb:
+    embedded:
+      version: 4.4.0
+
 logging:
   level:
     org.springframework.data: DEBUG

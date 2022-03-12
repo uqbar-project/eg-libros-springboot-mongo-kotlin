@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.5.6"
+    id("org.springframework.boot") version "2.6.4"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    kotlin("jvm") version "1.5.31"
-    kotlin("plugin.spring") version "1.5.31"
-    kotlin("plugin.jpa") version "1.5.31"
+    kotlin("jvm") version "1.6.10"
+    kotlin("plugin.spring") version "1.6.10"
+    kotlin("plugin.jpa") version "1.6.10"
     jacoco
 }
 
@@ -18,20 +18,21 @@ repositories {
     mavenCentral()
 }
 
+val springVersion = "2.6.4"
+
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-mongodb:2.5.6")
-    implementation("org.springframework.boot:spring-boot-starter-data-rest:2.5.6")
-    implementation("org.springframework.boot:spring-boot-starter-hateoas:2.5.6")
-    implementation("org.springframework.boot:spring-boot-starter-web-services:2.5.5")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0")
-    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0")
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb:$springVersion")
+    implementation("org.springframework.boot:spring-boot-starter-data-rest:$springVersion")
+    implementation("org.springframework.boot:spring-boot-starter-hateoas:$springVersion")
+    implementation("org.springframework.boot:spring-boot-starter-web-services:$springVersion")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.2")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("io.springfox:springfox-boot-starter:3.0.0")
-    implementation("io.springfox:springfox-swagger-ui:3.0.0")
-    implementation("org.springframework.boot:spring-boot-devtools:2.5.6")
-    testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.6")
-    testImplementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo")
+    implementation("org.springdoc:springdoc-openapi-ui:1.6.6")
+    implementation("org.springframework.boot:spring-boot-devtools:$springVersion")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:$springVersion")
+    testImplementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo:3.4.3")
 }
 
 tasks.withType<KotlinCompile> {
