@@ -17,6 +17,8 @@ class Prestamo {
     fun estaDisponible() = fechaDevolucion !== null
 
     fun validar() {
+        // Chequeo que persona es no nulo
+        persona
         if (!libro.estaDisponible()) {
             throw UserException("El libro no está disponible")
         }
