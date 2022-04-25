@@ -20,14 +20,11 @@ class PrestamoService {
 
     @Transactional
     fun generarPrestamo(prestamo: Prestamo) {
-        prestamo.libro
-        prestamo.persona
-        //
         val libro = libroRepository.findById(prestamo.libro.id).orElseThrow { NotFoundException("El libro con id " + prestamo.libro.id + " no existe" ) }
         prestamo.libro = libro
         prestamo.validar()
-        prestamoRepository.save(prestamo)
         libro.prestar()
+        prestamoRepository.save(prestamo)
         libroRepository.save(libro)
     }
 
