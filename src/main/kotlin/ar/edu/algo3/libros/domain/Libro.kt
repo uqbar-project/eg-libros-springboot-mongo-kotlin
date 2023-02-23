@@ -19,7 +19,7 @@ class Libro {
     var activo: Boolean = true
     var estado: String // "P" prestado / "D" disponible
 
-    @Transient // El transiento de JPA (Javax) no funciona. Hay que usar el de springframework.
+    @Transient // El transient de JPA (Javax) no funciona. Hay que usar el de springframework.
     var atributoNoPersistible = "Este atributo no se persiste"
 
     init {
