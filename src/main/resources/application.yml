@@ -1,13 +1,8 @@
+# base documental
 spring:
   data:
     mongodb:
-      database: test
-      host: localhost
-      port: 27017
-
-  mongodb:
-    embedded:
-      version: 4.4.0
+      uri: mongodb://capo:eyra@127.0.0.1:27019/libros?authSource=admin
 
 logging:
   level:
