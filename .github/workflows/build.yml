@@ -26,7 +26,7 @@ jobs:
           arguments: runOnGitHub
 
       # Send JaCoCo reports to codecov
-      - uses: codecov/codecov-action@v1
+      - uses: codecov/codecov-action@v3
 
       - name: Stop containers
         if: always()
