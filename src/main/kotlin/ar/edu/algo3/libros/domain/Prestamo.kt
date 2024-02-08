@@ -1,9 +1,9 @@
 package ar.edu.algo3.libros.domain
 
-import java.time.LocalDate
+import ar.edu.algo3.libros.errorHandling.UserException
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
-import ar.edu.algo3.libros.errorHandling.UserException
+import java.time.LocalDate
 
 @Document(collection = "prestamos")
 class Prestamo {

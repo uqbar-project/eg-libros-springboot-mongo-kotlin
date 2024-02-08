@@ -1,7 +1,6 @@
 package ar.edu.algo3.libros.service
 
 import ar.edu.algo3.libros.repository.PersonaRepository
-import ar.edu.algo3.libros.repository.PrestamoRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional

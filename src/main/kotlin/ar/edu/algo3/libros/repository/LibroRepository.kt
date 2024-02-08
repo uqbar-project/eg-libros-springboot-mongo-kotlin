@@ -1,8 +1,8 @@
 package ar.edu.algo3.libros.repository
 
+import ar.edu.algo3.libros.domain.Libro
 import org.springframework.data.mongodb.repository.MongoRepository
 import org.springframework.data.mongodb.repository.Query
-import ar.edu.algo3.libros.domain.Libro
 
 interface LibroRepository : MongoRepository<Libro, String> {
 

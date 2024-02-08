@@ -1,0 +1,10 @@
+# base documental
+spring:
+  data:
+    mongodb:
+      uri: mongodb://capo:eyra@127.0.0.1:27019/libros?authSource=admin
+
+logging:
+  level:
+    org.springframework.data: DEBUG
+    org.mongodb.driver.protocol.command: DEBUG

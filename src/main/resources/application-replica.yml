@@ -2,9 +2,5 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://admin:admin@172.16.238.10:27017,172.16.238.11:27017,172.16.238.12:27017/libros?authSource=admin&replicaSet=dbrs
-
-logging:
-  level:
-    org.springframework.data: DEBUG
-    org.mongodb.driver.protocol.command: DEBUG
+#      uri: mongodb://admin:admin@172.16.238.10:27017,172.16.238.11:27017,172.16.238.12:27017/libros?authSource=admin&replicaSet=dbrs
+      uri: mongodb://admin:admin@localhost:27058,localhost:27059,localhost:27060/libros?authSource=admin&replicaSet=dbrs
