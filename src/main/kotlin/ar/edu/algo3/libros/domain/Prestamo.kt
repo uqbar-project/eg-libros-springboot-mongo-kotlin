@@ -34,6 +34,7 @@ class Prestamo {
     }
 
     fun devolver() {
+        validarDevolucion()
         fechaDevolucion = LocalDate.now()
         libro.devolver()
     }

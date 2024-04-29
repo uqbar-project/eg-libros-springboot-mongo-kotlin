@@ -37,7 +37,6 @@ class PrestamoService {
         val prestamo = prestamoRepository.findById(prestamoOrigen.id).orElseThrow { NotFoundException("El préstamo con id " + prestamoOrigen.id + " no existe" ) }
         val libro = libroRepository.findById(prestamo.libro.id).orElseThrow { NotFoundException("El libro con id " + prestamo.libro.id + " no existe" ) }
         prestamo.libro = libro
-        prestamo.validarDevolucion()
         prestamo.devolver()
         prestamoRepository.save(prestamo)
         libroRepository.save(libro)
