@@ -1,0 +1,157 @@
+{
+  "info": {
+    "name": "Libros - Mongo",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "bruno",
+      "event": []
+    },
+    {
+      "name": "Devolver un libro",
+      "event": [],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": null,
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8080/prestamos",
+          "protocol": "http",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "prestamos"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n \"id\": \"63f6cc7860f75d7b08551183\",\n \"persona\": {\n    \"id\": \"61899330a2a49e291795947e\",\n    \"nombre\": \"Santos\",\n    \"password\": \"Milazzo\"\n  },\n \"libro\": {\n    \"id\": \"63f6cbf160f75d7b0855117d\",\n    \"titulo\": \"100 años de soledad\",\n    \"autor\": \"Gabriel García Márquez\",\n    \"activo\": true,\n    \"estado\": \"D\",\n    \"atributoNoPersistible\": \"Este atributo no se persiste\"\n  },\n \"fechaPrestamo\": \"2021-02-06\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Crear un préstamo",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": null,
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8080/prestamos",
+          "protocol": "http",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "prestamos"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n \"persona\": {\n    \"id\": \"67a94efdc3955751429366e9\",\n    \"nombre\": \"Medina\",\n    \"password\": \"Piquito\"\n  },\n  \"libro\": {\n    \"id\": \"67a94f78bc14b316c1c39e75\",\n    \"titulo\": \"100 años de soledad\",\n    \"autor\": \"Gabriel García Márquez\",\n    \"activo\": true,\n    \"estado\": \"D\",\n    \"atributoNoPersistible\": \"Este atributo no se persiste\"\n  },\n \"fechaPrestamo\": \"2021-02-06\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Ver préstamos pendientes",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": null,
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8080/prestamos",
+          "protocol": "http",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "prestamos"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "Libros prestables",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": null,
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8080/libros/a",
+          "protocol": "http",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "libros",
+            "a"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "Personas que se pueden llevar un libro",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": null,
+        "description": "",
+        "url": {
+          "raw": "http://localhost:8080/personas",
+          "protocol": "http",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "personas"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    }
+  ],
+  "variable": []
+}

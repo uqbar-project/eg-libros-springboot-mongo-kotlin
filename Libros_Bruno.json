@@ -1,0 +1,150 @@
+{
+  "name": "Libros - Mongo",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "Devolver un libro",
+      "seq": 1,
+      "request": {
+        "url": "http://localhost:8080/prestamos",
+        "method": "PATCH",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n \"id\": \"63f6cc7860f75d7b08551183\",\n \"persona\": {\n    \"id\": \"61899330a2a49e291795947e\",\n    \"nombre\": \"Santos\",\n    \"password\": \"Milazzo\"\n  },\n \"libro\": {\n    \"id\": \"63f6cbf160f75d7b0855117d\",\n    \"titulo\": \"100 años de soledad\",\n    \"autor\": \"Gabriel García Márquez\",\n    \"activo\": true,\n    \"estado\": \"D\",\n    \"atributoNoPersistible\": \"Este atributo no se persiste\"\n  },\n \"fechaPrestamo\": \"2021-02-06\"\n}\n",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Crear un préstamo",
+      "seq": 2,
+      "request": {
+        "url": "http://localhost:8080/prestamos",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n \"persona\": {\n    \"id\": \"67a94efdc3955751429366e9\",\n    \"nombre\": \"Medina\",\n    \"password\": \"Piquito\"\n  },\n  \"libro\": {\n    \"id\": \"67a94f78bc14b316c1c39e75\",\n    \"titulo\": \"100 años de soledad\",\n    \"autor\": \"Gabriel García Márquez\",\n    \"activo\": true,\n    \"estado\": \"D\",\n    \"atributoNoPersistible\": \"Este atributo no se persiste\"\n  },\n \"fechaPrestamo\": \"2021-02-06\"\n}\n",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Ver préstamos pendientes",
+      "seq": 3,
+      "request": {
+        "url": "http://localhost:8080/prestamos",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Libros prestables",
+      "seq": 4,
+      "request": {
+        "url": "http://localhost:8080/libros/a",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Personas que se pueden llevar un libro",
+      "seq": 5,
+      "request": {
+        "url": "http://localhost:8080/personas",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Libros - Mongo",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
