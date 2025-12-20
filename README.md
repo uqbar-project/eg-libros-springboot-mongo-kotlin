@@ -10,9 +10,11 @@ Solo hace falta tener instalado Docker Desktop (el pack docker engine y docker c
 docker compose up
 ```
 
-Eso te levanta una base documental MongoDB en el puerto 27021, con usuario capo y contraseña eyra.
+Eso te levanta una base documental MongoDB en el puerto 27019, con usuario capo y contraseña eyra. El string de conexión es
 
-Como cliente te recomendamos la herramienta Studio 3T. Para más detalles podés ver [el README del ejemplo de viajes](https://github.com/uqbar-project/eg-viajes-mongodb) que te explica los pasos de instalación.
+```bash
+mongodb://capo:eyra@127.0.0.1:27019/libros?authSource=admin
+```
 
 ## Apunte completo
 
