@@ -22,4 +22,4 @@ La explicación detallada está en [este apunte](https://docs.google.com/documen
 
 ## Cómo testear la aplicación en Insomnia
 
-Te dejamos [el archivo de Insomnia](./Libros_Insomnia.json) con ejemplos para probarlo.
+Te dejamos [el archivo de Bruno](./Libros_Bruno.json) con ejemplos para probarlo.
