@@ -2,8 +2,10 @@ package ar.edu.algo3.libros.service
 
 
 import ar.edu.algo3.libros.domain.Prestamo
+import ar.edu.algo3.libros.domain.toDTO
 import ar.edu.algo3.libros.errorHandling.NotFoundException
 import ar.edu.algo3.libros.repository.LibroRepository
+import ar.edu.algo3.libros.repository.PersonaRepository
 import ar.edu.algo3.libros.repository.PrestamoRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -16,16 +18,23 @@ class PrestamoService {
     lateinit var prestamoRepository: PrestamoRepository
 
     @Autowired
+    lateinit var personaRepository: PersonaRepository
+
+    @Autowired
     lateinit var libroRepository: LibroRepository
 
     @Transactional
     fun generarPrestamo(prestamo: Prestamo) {
-        val libro = libroRepository.findById(prestamo.libro.id).orElseThrow { NotFoundException("El libro con id " + prestamo.libro.id + " no existe" ) }
-        prestamo.libro = libro
-        prestamo.validar()
-        libro.prestar()
+        val personaAPrestar = personaRepository.findById(prestamo.persona.id).orElseThrow { NotFoundException("La persona con id " + prestamo.persona.id + " no existe" ) }
+        val libroAPrestar = libroRepository.findById(prestamo.libro.id).orElseThrow { NotFoundException("El libro con id " + prestamo.libro.id + " no existe" ) }
+        prestamo.apply {
+            libro = libroAPrestar
+            persona = personaAPrestar.toDTO()
+            validar()
+        }
+        libroAPrestar.prestar()
         prestamoRepository.save(prestamo)
-        libroRepository.save(libro)
+        libroRepository.save(libroAPrestar)
     }
 
     @Transactional(readOnly = true)

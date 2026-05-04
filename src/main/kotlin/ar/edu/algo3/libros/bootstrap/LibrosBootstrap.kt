@@ -3,6 +3,7 @@ package ar.edu.algo3.libros.bootstrap
 import ar.edu.algo3.libros.domain.Libro
 import ar.edu.algo3.libros.domain.Persona
 import ar.edu.algo3.libros.domain.Prestamo
+import ar.edu.algo3.libros.domain.toDTO
 import ar.edu.algo3.libros.repository.LibroRepository
 import ar.edu.algo3.libros.repository.PersonaRepository
 import ar.edu.algo3.libros.repository.PrestamoRepository
@@ -112,7 +113,7 @@ class LibrosBootstrap : InitializingBean {
     fun crearPrestamo(_libro: Libro, _persona: Persona): Prestamo {
         return Prestamo().apply {
             libro = _libro
-            persona = _persona
+            persona = _persona.toDTO()
         }
     }
 

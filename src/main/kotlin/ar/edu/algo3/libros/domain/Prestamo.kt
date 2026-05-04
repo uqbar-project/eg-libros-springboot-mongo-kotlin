@@ -9,12 +9,12 @@ import java.time.LocalDate
 class Prestamo {
     @Id
     lateinit var id: String
-    lateinit var persona: Persona
+    lateinit var persona: PersonaDTO
     lateinit var libro: Libro
     var fechaPrestamo = LocalDate.now()
     var fechaDevolucion: LocalDate? = null
 
-    fun estaDisponible() = fechaDevolucion !== null
+    fun estaDisponible() = fechaDevolucion != null
 
     fun validar() {
         // Chequeo que persona es no nulo
@@ -40,3 +40,7 @@ class Prestamo {
     }
 
 }
+
+data class PersonaDTO(var id: String, var nombre: String)
+
+fun Persona.toDTO() = PersonaDTO(id, nombre)
