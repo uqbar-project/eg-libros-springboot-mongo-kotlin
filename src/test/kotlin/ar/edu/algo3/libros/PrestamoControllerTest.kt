@@ -2,6 +2,7 @@ package ar.edu.algo3.libros
 
 import ar.edu.algo3.libros.domain.Libro
 import ar.edu.algo3.libros.domain.Prestamo
+import ar.edu.algo3.libros.domain.toDTO
 import ar.edu.algo3.libros.repository.LibroRepository
 import ar.edu.algo3.libros.repository.PersonaRepository
 import ar.edu.algo3.libros.repository.PrestamoRepository
@@ -135,7 +136,7 @@ class PrestamoControllerTest {
 
 
     fun crearUnPrestamo() = Prestamo().apply {
-        persona = personaRepository.findAll().first()
+        persona = personaRepository.findAll().first().toDTO()
         val libroPrestable = libroRepository.getLibrosPrestables("").firstOrNull() ?: libroRepository.save(
             Libro().apply {
                 autor = "Leon Tolstoi"
