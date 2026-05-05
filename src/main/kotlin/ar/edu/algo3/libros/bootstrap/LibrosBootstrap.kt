@@ -85,14 +85,14 @@ class LibrosBootstrap : InitializingBean {
     }
 
     fun PrestamoRepository.createWhenNew(prestamo: Prestamo) {
-        if (this.findByLibro(prestamo.libro) === null) {
+        if (this.findByLibro(prestamo.libro) == null) {
             this.save(prestamo)
         }
     }
 
     fun PersonaRepository.createIfNotExists(usuario: Persona): Persona {
         val bdUsuario = this.findByNombre(usuario.nombre)
-        return if (bdUsuario === null) {
+        return if (bdUsuario == null) {
             this.save(usuario)
             usuario
         } else {
@@ -102,7 +102,7 @@ class LibrosBootstrap : InitializingBean {
 
     fun LibroRepository.createIfNotExists(libro: Libro): Libro {
         val bdLibro = this.findByTitulo(libro.titulo)
-        return if (bdLibro === null) {
+        return if (bdLibro == null) {
             this.save(libro)
             libro
         } else {

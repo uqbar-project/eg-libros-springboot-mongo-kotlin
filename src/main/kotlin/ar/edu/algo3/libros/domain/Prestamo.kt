@@ -10,6 +10,9 @@ class Prestamo {
     @Id
     lateinit var id: String
     lateinit var persona: PersonaDTO
+
+    // @DocumentReference si queremos usar solo el ID de Libro
+    // (y tener a cambio N+1 queries para traer los préstamos pendientes)
     lateinit var libro: Libro
     var fechaPrestamo = LocalDate.now()
     var fechaDevolucion: LocalDate? = null
@@ -17,8 +20,6 @@ class Prestamo {
     fun estaDisponible() = fechaDevolucion != null
 
     fun validar() {
-        // Chequeo que persona es no nulo
-        persona
         if (!libro.estaDisponible()) {
             throw UserException("El libro no está disponible")
         }
